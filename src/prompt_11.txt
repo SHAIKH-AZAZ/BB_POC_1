@@ -1,0 +1,99 @@
+You are an expert structural drawing data extractor.
+
+Extract ONLY the beam schedule table from the image.
+
+IMPORTANT:
+- Return ONLY valid JSON
+- No explanation
+- No extra text
+- No markdown
+
+=========================
+OUTPUT FORMAT
+=========================
+
+{
+  "beams": [
+    {
+      "beam_id": "",
+      "size": {
+        "width": null,
+        "depth": null,
+        "length": null
+      },
+      "reinforcement": [],
+      "stirrups": {
+        "dia": [],
+        "spacing": []
+      }
+    }
+  ]
+}
+
+=========================
+RULES
+=========================
+
+1. Extract ONLY table rows
+2. Ignore notes, drawings, diagrams
+3. Extract ALL beams (top to bottom)
+4. Do NOT stop early
+
+=========================
+BEAM ID
+=========================
+
+- Extract from BEAM NO.
+
+=========================
+SIZE
+=========================
+
+From RCC BEAM SIZE:
+
+Example:
+300 x 1000 → width = 300, depth = 1000
+
+Ignore:
+- mm
+- extra text
+
+=========================
+REINFORCEMENT
+=========================
+
+Extract from:
+- BOTTOM REINF.
+- TOP REINF.
+- SFR (E.F.)
+- EXTRA BOUNDARY REINF. (E.F.)
+
+Examples:
+3-T16
+5-T12
+
+Rules:
+- Keep format like 2-T16
+- Remove:
+  (0.1L), [LAP], +
+
+=========================
+STIRRUPS
+=========================
+
+Examples:
+2L-T10-100
+T8-150
+
+Rules:
+- Diameter → T10, T8
+- Spacing → 100 C/C, 150 C/C
+- Valid range: 75 to 300
+
+=========================
+FINAL CHECK
+=========================
+
+- Ensure JSON is valid
+- Ensure multiple beams exist
+- Do not return empty output

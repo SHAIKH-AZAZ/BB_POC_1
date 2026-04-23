@@ -1,0 +1,24 @@
+{
+  "beams": [
+    {
+      "beam_id": "SP4",
+      "size": {
+        "width": 300,
+        "depth": 1000,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16",
+        "5-T12"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    }
+  ]
+}

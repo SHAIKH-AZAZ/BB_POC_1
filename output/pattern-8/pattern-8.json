@@ -1,0 +1,682 @@
+{
+  "beams": [
+    {
+      "beam_id": "CB1a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB1b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB1c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "1-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "4L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB1d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB1e",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB2a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB2b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB2c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "1-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "4L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB2d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB3a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB3b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB3c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-25T"
+      ],
+      "stirrups": {
+        "dia": [
+          "4L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB3d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-25T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB3e",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "3-25T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB4a",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "6-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB4b",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "6-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB5a",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "7-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB5b",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "7-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB6a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "13",
+        "mid_span": "REST",
+        "right": "13"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB6b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "13",
+        "mid_span": "REST",
+        "right": "13"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB6c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "13",
+        "mid_span": "REST",
+        "right": "13"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB6d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "13",
+        "mid_span": "REST",
+        "right": "13"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB6e",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB6f",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "13",
+        "mid_span": "REST",
+        "right": "13"
+      },
+      "reinforcement": [
+        "2-16T"
+      ],
+      "stirrups": {
+        "dia": [
+          "2L-8T"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB7a",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "7-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB7b",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "7-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB8a",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "6-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB8b",
+      "size": {
+        "width": 600,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [
+        "6-32T"
+      ],
+      "stirrups": {
+        "dia": [
+          "6L-10T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    }
+  ]
+}

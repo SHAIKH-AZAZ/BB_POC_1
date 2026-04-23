@@ -1,0 +1,160 @@
+{
+  "beams": [
+    {
+      "beam_id": "B1",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": 1375
+      },
+      "reinforcement": [
+        "3-Y16-A23",
+        "3-A23"
+      ],
+      "stirrups": {
+        "dia": [
+          "14-Y8-A24"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B3",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": 1400
+      },
+      "reinforcement": [
+        "3-Y20-A25",
+        "3-A25"
+      ],
+      "stirrups": {
+        "dia": [
+          "14-A24"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5",
+      "size": {
+        "width": 300,
+        "depth": 450,
+        "length": 1375
+      },
+      "reinforcement": [
+        "3-Y16-A26",
+        "3-A26"
+      ],
+      "stirrups": {
+        "dia": [
+          "14-Y8-A27"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": 1400
+      },
+      "reinforcement": [
+        "3-Y16-A28",
+        "3-A28"
+      ],
+      "stirrups": {
+        "dia": [
+          "14-A24"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2",
+      "size": {
+        "width": 300,
+        "depth": 450,
+        "length": 1500
+      },
+      "reinforcement": [
+        "3-Y16-A29"
+      ],
+      "stirrups": {
+        "dia": [
+          "15-A27"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B4",
+      "size": {
+        "width": 300,
+        "depth": 450,
+        "length": 1500
+      },
+      "reinforcement": [
+        "3-Y16-A29"
+      ],
+      "stirrups": {
+        "dia": [
+          "15-A27"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B6",
+      "size": {
+        "width": 300,
+        "depth": 450,
+        "length": 1500
+      },
+      "reinforcement": [
+        "3-Y16-A29"
+      ],
+      "stirrups": {
+        "dia": [
+          "15-A27"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B7",
+      "size": {
+        "width": 300,
+        "depth": 450,
+        "length": 1500
+      },
+      "reinforcement": [
+        "3-Y16-A29"
+      ],
+      "stirrups": {
+        "dia": [
+          "15-A27"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    }
+  ]
+}
