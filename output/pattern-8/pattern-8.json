@@ -61,7 +61,8 @@
         "right": "ALL"
       },
       "reinforcement": [
-        "1-32T"
+        "1-12T",
+        "3-32T"
       ],
       "stirrups": {
         "dia": [
@@ -84,15 +85,13 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "3-32T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "2L-8T"
         ],
         "spacing": [
-          "150 C/C"
+          "100 C/C"
         ]
       }
     },
@@ -108,15 +107,13 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "2-16T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C"
+          "150 C/C"
         ]
       }
     },
@@ -181,7 +178,7 @@
         "right": "ALL"
       },
       "reinforcement": [
-        "1-32T"
+        "3-25T"
       ],
       "stirrups": {
         "dia": [
@@ -205,11 +202,33 @@
         "right": "ALL"
       },
       "reinforcement": [
-        "3-32T"
+        "3-25T"
       ],
       "stirrups": {
         "dia": [
-          "2L-8T"
+          "4L-8T"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "CB2e",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "nos": {
+        "left": "ALL",
+        "mid_span": "ALL",
+        "right": "ALL"
+      },
+      "reinforcement": [],
+      "stirrups": {
+        "dia": [
+          "4L-8T"
         ],
         "spacing": [
           "100 C/C"
@@ -276,9 +295,7 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "3-25T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "4L-10T"
@@ -300,9 +317,7 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "3-25T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "2L-8T"
@@ -324,12 +339,10 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "3-25T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
-          "2L-8T"
+          "4L-8T"
         ],
         "spacing": [
           "100 C/C"
@@ -445,6 +458,7 @@
         "right": "13"
       },
       "reinforcement": [
+        "1-12T",
         "2-16T"
       ],
       "stirrups": {
@@ -452,8 +466,7 @@
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C",
-          "150 C/C"
+          "100 C/C"
         ]
       }
     },
@@ -470,6 +483,7 @@
         "right": "13"
       },
       "reinforcement": [
+        "1-12T",
         "2-16T"
       ],
       "stirrups": {
@@ -477,7 +491,6 @@
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C",
           "150 C/C"
         ]
       }
@@ -495,6 +508,7 @@
         "right": "13"
       },
       "reinforcement": [
+        "1-12T",
         "2-16T"
       ],
       "stirrups": {
@@ -502,8 +516,7 @@
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C",
-          "150 C/C"
+          "100 C/C"
         ]
       }
     },
@@ -520,6 +533,7 @@
         "right": "13"
       },
       "reinforcement": [
+        "1-12T",
         "2-16T"
       ],
       "stirrups": {
@@ -527,7 +541,6 @@
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C",
           "150 C/C"
         ]
       }
@@ -552,8 +565,7 @@
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C",
-          "150 C/C"
+          "100 C/C"
         ]
       }
     },
@@ -570,6 +582,7 @@
         "right": "13"
       },
       "reinforcement": [
+        "1-12T",
         "2-16T"
       ],
       "stirrups": {
@@ -577,8 +590,7 @@
           "2L-8T"
         ],
         "spacing": [
-          "100 C/C",
-          "150 C/C"
+          "100 C/C"
         ]
       }
     },
@@ -594,9 +606,7 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "7-32T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "6L-10T"
@@ -618,9 +628,7 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "7-32T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "6L-10T"
@@ -642,9 +650,7 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "6-32T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "6L-10T"
@@ -666,9 +672,7 @@
         "mid_span": "ALL",
         "right": "ALL"
       },
-      "reinforcement": [
-        "6-32T"
-      ],
+      "reinforcement": [],
       "stirrups": {
         "dia": [
           "6L-10T"
