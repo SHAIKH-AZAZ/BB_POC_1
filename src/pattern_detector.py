@@ -22,8 +22,8 @@ Ignore numbers.
 Ignore row content.
 Focus ONLY on column names.
 
-There are EXACTLY 8 patterns.
-Return ONLY one number from 1 to 8.
+There are EXACTLY 13 patterns.
+Return ONLY one number from 1 to 13.
 No explanation.
 No extra text.
 Only the number.
@@ -434,4 +434,9 @@ Return ONLY the number.
     if not result.isdigit():
         raise Exception(f"Pattern detection failed. Model returned: {result}")
 
-    return int(result)
+    pattern_number = int(result)
+
+    if pattern_number < 1 or pattern_number > 13:
+        raise Exception(f"Pattern detection out of range. Model returned: {pattern_number}")
+
+    return pattern_number
