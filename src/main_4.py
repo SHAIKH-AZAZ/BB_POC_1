@@ -5,7 +5,11 @@ from tqdm import tqdm
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
 from vision_extractor import extract_from_image
-from image_slicer import slice_image_horizontally, delete_temp_slices
+from image_slicer import (
+    slice_image_horizontally,
+    delete_temp_slices,
+    get_dynamic_slice_count,
+)
 
 
 # ==============================
@@ -107,8 +111,14 @@ def process_pdf(pdf_path):
 
     for img_path in tqdm(image_paths):
 
-        # 🔥 Use 3 slices (more stable)
-        slice_paths = slice_image_horizontally(img_path, num_slices=3)
+        # Ask the model how many horizontal slices this page needs.
+        num_slices = get_dynamic_slice_count(
+            img_path,
+            suggest_fn=extract_from_image,
+            fallback_slices=3,
+        )
+        print(f"Using {num_slices} slice(s) for {os.path.basename(img_path)}")
+        slice_paths = slice_image_horizontally(img_path, num_slices=num_slices)
 
         for slice_img in slice_paths:
 

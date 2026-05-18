@@ -1,11 +1,17 @@
 import json
+
 from pdf_to_images import convert_pdf_to_images
 from vision_extractor import extract_from_image
 
 
 def detect_pattern(pdf_path, temp_folder):
 
-    image_paths = convert_pdf_to_images(pdf_path, temp_folder)
+    image_paths = convert_pdf_to_images(
+        pdf_path,
+        temp_folder,
+        dpi=300,
+        max_pixels=40_000_000,
+    )
 
     if not image_paths:
         raise Exception("No image generated for detection.")
@@ -348,7 +354,7 @@ d
 tf
 tw
 EMBEDMENT LENGTH "Le"
-LEFT SUPPORT 
+LEFT SUPPORT
 RIGHT SUPPORT
 BOTTOM REINF.
 TOP REINF.
@@ -437,6 +443,8 @@ Return ONLY the number.
     pattern_number = int(result)
 
     if pattern_number < 1 or pattern_number > 13:
-        raise Exception(f"Pattern detection out of range. Model returned: {pattern_number}")
+        raise Exception(
+            f"Pattern detection out of range. Model returned: {pattern_number}"
+        )
 
     return pattern_number

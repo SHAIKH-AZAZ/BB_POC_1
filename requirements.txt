@@ -1,5 +1,7 @@
 openai
 pymupdf
+pdfplumber
+pandas
 python-dotenv
 tqdm
 Pillow

@@ -10,8 +10,8 @@ def run_pattern(pattern_number, pdf_path):
     module_name = f"main_{pattern_number}"
     module = importlib.import_module(module_name)
 
-    print(f"🔎 Detected Pattern: {pattern_number}")
-    print(f"🚀 Running {module_name}.py")
+    print(f"Detected Pattern: {pattern_number}")
+    print(f"Running {module_name}.py")
 
     module.process_pdf(pdf_path)
 
@@ -26,7 +26,7 @@ def main():
     ]
 
     if not pdf_files:
-        print("⚠ No PDF files found.")
+        print("No PDF files found.")
         return
 
     for pdf in pdf_files:
@@ -36,7 +36,7 @@ def main():
 
         os.makedirs(temp_folder, exist_ok=True)
 
-        print(f"\n📄 Detecting pattern for {pdf}...")
+        print(f"\nDetecting pattern for {pdf}...")
 
         pattern_number = detect_pattern(pdf_path, temp_folder)
 
