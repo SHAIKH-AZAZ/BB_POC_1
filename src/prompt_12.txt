@@ -100,9 +100,14 @@ OUTPUT FORMAT RULE:
    2-8 TOR → 2-T8
 
 2. If multiple bars joined by "+":
-   Split into separate entries
+   Split into separate entries.
 
    Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
+   Also:
    2-12+1-12 TOR →
 
    [

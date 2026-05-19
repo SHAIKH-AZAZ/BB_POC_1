@@ -105,6 +105,12 @@ Rules:
 1. Extract reinforcement from ALL these columns.
 2. Ignore "-" cells.
 3. If "+" appears, split into separate reinforcement entries.
+
+   Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
 4. Keep full text exactly as visible (example: 3-T20).
 5. Remove duplicates only.
 6. Return only unique reinforcement values.

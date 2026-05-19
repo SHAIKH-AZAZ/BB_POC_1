@@ -112,9 +112,16 @@ REINFORCEMENT RULE (Pattern-6)
    3-Y16-A23
    3-A23
 
-3. Do NOT modify bar marks like A23.
-4. Do NOT convert format.
-5. Remove duplicates only.
+3. If "+" appears, treat it as separate reinforcement entries.
+
+   Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
+4. Do NOT modify bar marks like A23.
+5. Do NOT convert format.
+6. Remove duplicates only.
 
 =========================
 STIRRUPS RULE (Pattern-6)

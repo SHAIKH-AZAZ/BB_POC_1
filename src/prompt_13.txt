@@ -102,6 +102,11 @@ OUTPUT RULE:
 2. Split "+" values:
 
    Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
+   Also:
    2-12+1-12 TOR →
 
    [

@@ -105,6 +105,11 @@ REINFORCEMENT
 4. If "+" appears:
    Treat each part as separate reinforcement.
 
+   Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
 5. Keep full reinforcement text exactly as visible.
 
 Examples:

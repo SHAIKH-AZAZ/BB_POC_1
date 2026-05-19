@@ -57,13 +57,20 @@ REINFORCEMENT RULES
    Extract as:
    2-16T
    1-12T
-5. Keep exact format:
+5. If "+" appears, treat it as separate reinforcement entries.
+
+   Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
+6. Keep exact format:
    3-32T
    2-16T
    1-12T
-6. Remove duplicates.
-7. Do NOT merge across beams.
-8. If no reinforcement text visible above beam → return [].
+7. Remove duplicates.
+8. Do NOT merge across beams.
+9. If no reinforcement text visible above beam → return [].
 
 ========================================================
 NOS RULES

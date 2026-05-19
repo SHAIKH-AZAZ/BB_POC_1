@@ -177,10 +177,22 @@ def get_dynamic_slice_strategy(
 
 
 def smart_slice(image_path, suggest_fn, fallback_direction="horizontal",
-                fallback_slices=None, min_slices=1, max_slices=10):
+                fallback_slices=None, min_slices=1, max_slices=10,
+                max_strip_height=1800):
     """
     High-level helper: ask the model how to slice, then do it.
-    Returns list of temporary slice paths.
+
+    Two-stage logic when direction = "vertical":
+        Stage 1 — slice page into N vertical strips (isolates column groups).
+        Stage 2 — for any strip whose height exceeds max_strip_height pixels,
+                  further slice it horizontally so the model sees a manageable
+                  number of rows at a time.
+        The result is a flat list of sub-slice paths ready for extraction.
+
+    When direction = "horizontal" the behaviour is unchanged (single pass).
+
+    Returns flat list of temporary slice paths.
+    Caller is responsible for calling delete_temp_slices() on the returned list.
     """
     direction, num_slices = get_dynamic_slice_strategy(
         image_path,
@@ -191,10 +203,39 @@ def smart_slice(image_path, suggest_fn, fallback_direction="horizontal",
         max_slices=max_slices,
     )
 
-    if direction == "vertical":
-        return slice_image_vertically(image_path, num_slices=num_slices)
-    else:
+    # ── Horizontal: single pass ───────────────────────────────────────────────
+    if direction != "vertical":
         return slice_image_horizontally(image_path, num_slices=num_slices)
+
+    # ── Stage 1: vertical strips (isolate column groups) ─────────────────────
+    vertical_strips = slice_image_vertically(image_path, num_slices=num_slices)
+
+    # ── Stage 2: horizontal sub-slicing for tall strips ───────────────────────
+    final_slices = []
+    for strip_path in vertical_strips:
+        with Image.open(strip_path) as strip_img:
+            _, strip_height = strip_img.size
+
+        if strip_height <= max_strip_height:
+            # Strip is short enough — send directly to the model
+            final_slices.append(strip_path)
+        else:
+            # Strip is too tall — sub-slice horizontally
+            h_count = estimate_slice_count_by_size(
+                strip_path,
+                target_slice_height=max_strip_height,
+                min_slices=2,
+                max_slices=10,
+            )
+            print(f"    Strip {os.path.basename(strip_path)} is {strip_height}px tall "
+                  f"-> sub-slicing horizontally x{h_count}")
+            h_slices = slice_image_horizontally(strip_path, num_slices=h_count)
+            final_slices.extend(h_slices)
+            # The vertical strip is now an intermediate temp; delete it here
+            if os.path.exists(strip_path):
+                os.remove(strip_path)
+
+    return final_slices
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -28,6 +28,12 @@ CHECKLIST
 4. REINFORCEMENT
    - Are all rebar entries captured?
    - Normalize to format: quantity-Tdiameter (e.g. 7-T25, 2-T16)
+   - If "+" appears, treat it as separate reinforcement entries.
+
+     Example:
+     2-T16 + 2-T12
+     → "2-T16"
+     → "2-T12"
 
 5. STIRRUPS
    - Are dia and spacing correct?

@@ -38,20 +38,43 @@ Only the number.
 PATTERN 1 (STRICT)
 ========================================================
 
-Return 1 ONLY if:
+GENERAL SIMPLE RCC BEAM SCHEDULE.
 
-- Simple table with:
-  - BEAM NUMBERS
-  - SIZE (WIDTH, DEPTH)
-  - BOTTOM REINFORCEMENT (LEFT, MID, RIGHT)
-  - TOP REINFORCEMENT (LEFT, MID, RIGHT)
-  - SHEAR STIRRUPS (LEFT, MID, RIGHT)
+Return 1 if the header contains:
+
+- A beam identifier column:
+  BEAM NUMBERS, BEAM NO., BEAM MARK, or similar
+
+- A beam size column or split size columns:
+  SIZE, B, D, WIDTH, DEPTH, or B x D
+
+- BOTTOM REINFORCEMENT with simple location columns:
+  LEFT, MID SPAN / MID / CENTRE, RIGHT
+
+- TOP REINFORCEMENT with simple location columns:
+  LEFT, MID SPAN / MID / CENTRE, RIGHT
+
+- SHEAR STIRRUPS / STIRRUPS / RINGS with simple location columns:
+  LEFT, MID SPAN / MID / CENTRE, RIGHT
+
+Optional Pattern 1 columns may include:
+
+- SFR / SIDE FACE REINFORCEMENT
+- DIAGONAL
+- REMARKS
 
 AND MUST NOT contain:
 
 - A, B, C, D1(mm), D2(mm)
 - E, G
 - Any labeled reinforcement like "TOP REINF A", "BOTTOM REINF B"
+- BEAM TOP LEVEL as a data column
+- BEAM TYPE as a data column
+- GRID ID
+- SIZE header containing "/d"
+- Bottom (Straight) / Bottom (Curtail)
+- Top (Straight) / Top (Extra Over Support)
+- separate stirrup subcolumns named DIA, @C/C, DIST under LEFT/CENTRE/RIGHT
 
 If any structured reinforcement labels (A/B/C/etc.) exist → DO NOT RETURN 1
 
@@ -288,40 +311,49 @@ Contains:
 ========================================================
 PATTERN 9
 ========================================================
-Header contains:
+GENERAL RCC BEAM SCHEDULE with flexible columns.
 
+Return 9 if the header contains:
 
-BEAM NOs.
-BEAM TOP LEVEL
-SIZE - B
-SIZE - D
-BOTTOM REINFORCEMENT
-@LEFT SUPPORT
-MID SPAN
-@RIGHT SUPPORT
-TOP REINFORCEMENT
-@LEFT SUPPORT
-MID SPAN
-@RIGHT SUPPORT
-SIDE FACE REINF. IN EACH FACE
-STIRRUPS
-LEFT SUP.
-DIA
-@C/C
-DIST
-CENTRE
-DIA
-@C/C
-RIGHT SUP.
-DIA
-@C/C
-DIST
-BEAM TYPE
-REMARKS
+- A beam identifier column:
+  BEAM NO, BEAM NOS., BEAM MARK, BEAM NUMBER, or similar
+
+- A beam size column or split size columns:
+  SIZE, B, D, B x D, WIDTH, DEPTH, BREADTH
+
+- AND at least one reinforcement/stirrup schedule group such as:
+  BOTTOM REINFORCEMENT / BOTTOM REINF.
+  TOP REINFORCEMENT / TOP REINF.
+  SIDE FACE REINF. / SIDE FACE REINFORCEMENT / SFR
+  STIRRUPS / RINGS / SHEAR REINFORCEMENT
+
+- AND at least one Pattern-9-specific signal:
+  BEAM TOP LEVEL / TOP LEVEL / LVL as a data column
+  BEAM TYPE as a data column
+  REMARKS with a beam schedule group
+  separate stirrup subcolumns such as DIA, @C/C, DIST
+  LEFT SUP. / CENTRE / RIGHT SUP. grouped under STIRRUPS
+
+Common optional Pattern 9 columns include:
+
+- BEAM TOP LEVEL, TOP LEVEL, LEVEL, LVL
+- LEFT SUPPORT, @LEFT SUPPORT, LHS
+- MID SPAN, CENTRE, CENTER, MID
+- RIGHT SUPPORT, @RIGHT SUPPORT, RHS
+- DIA, @C/C, SPACING, DIST
+- BEAM TYPE, TYPE
+- REMARKS, NOTES
 
 CRITICAL IDENTIFIER:
-Presence of "BEAM TOP LEVEL" column is mandatory.
-If this exists → ALWAYS RETURN 9
+"BEAM TOP LEVEL" is a strong signal for Pattern 9, but it is NOT mandatory.
+Columns may be fewer, extra, renamed, wrapped, or split.
+
+DO NOT classify as Pattern 10 if any reinforcement, side-face, stirrup,
+rings, or shear reinforcement columns exist.
+
+DO NOT classify as Pattern 9 when the header is the simple Pattern 1 layout:
+BEAM NUMBERS + SIZE + BOTTOM REINFORCEMENT + TOP REINFORCEMENT +
+SHEAR STIRRUPS with only LEFT / MID SPAN / RIGHT subcolumns.
 
 ========================================================
 PATTERN 10
@@ -396,23 +428,55 @@ FINAL DECISION PRIORITY (VERY IMPORTANT)
 
 1) If header contains:
    "BEAM TOP LEVEL"
+   AND any reinforcement/stirrup/side-face/rings/shear columns
    → RETURN 9
 
-2) If header contains:
+2) If header contains a simple beam schedule with:
+   - BEAM NUMBERS / BEAM NO / BEAM MARK
+   - SIZE or B and D
+   - BOTTOM REINFORCEMENT with LEFT / MID SPAN / RIGHT
+   - TOP REINFORCEMENT with LEFT / MID SPAN / RIGHT
+   - SHEAR STIRRUPS with LEFT / MID SPAN / RIGHT
+   AND does NOT contain:
+   - BEAM TOP LEVEL
+   - BEAM TYPE
+   - GRID ID
+   - /d in size header
+   - Bottom (Straight) / Bottom (Curtail)
+   - DIA / @C/C / DIST as separate stirrup subcolumns
+   - labeled reinforcement A/B/C/D1/D2/E/G
+   → RETURN 1
+
+3) If header contains beam identifier + size
+   AND any of these groups:
+   - BOTTOM REINFORCEMENT
+   - TOP REINFORCEMENT
+   - SIDE FACE REINF / SFR
+   - STIRRUPS / RINGS
+   - SHEAR REINFORCEMENT
+   AND any Pattern-9-specific signal:
+   - BEAM TYPE
+   - REMARKS with beam schedule groups
+   - separate DIA / @C/C / DIST subcolumns
+   - LEFT SUP. / CENTRE / RIGHT SUP. under STIRRUPS
+   → RETURN 9
+
+4) If header contains:
    "LEVEL" AND "SIZE" AND only simple columns
+   AND no reinforcement/stirrup/side-face/rings/shear columns
    → RETURN 10
 
-3) If header contains ONLY:
+5) If header contains ONLY:
    - A
    - B
    AND does NOT contain:
    - C, D1, D2, E, G
    → RETURN 5
 
-4) If you see "/d" inside size column
+6) If you see "/d" inside size column
    → RETURN 2
 
-5) Pattern 3 should be returned ONLY if:
+7) Pattern 3 should be returned ONLY if:
    - Bottom (Straight)
    - Bottom (Curtail)
    - Top (Straight)
@@ -424,10 +488,10 @@ FINAL DECISION PRIORITY (VERY IMPORTANT)
    - SIDE FACE REINF
    - BEAM TYPE
 
-6) Pattern 1 should be returned ONLY if NO labeled reinforcement
+8) Pattern 1 should be returned ONLY if NO labeled reinforcement
    (A/B/C/D1/D2/E/G) exists
 
-7) If unsure → DO NOT default to 1 or 3
+9) If unsure → DO NOT default to 1 or 3
 
 Match full header structure carefully.
 

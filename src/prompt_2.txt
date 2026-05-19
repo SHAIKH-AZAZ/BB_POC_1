@@ -91,15 +91,23 @@ Rules:
 
 1. Ignore "---".
 2. Extract every reinforcement separately.
-3. Convert to format:
+3. If "+" appears, treat it as separate reinforcement entries.
+
+   Example:
+   2-T16 + 2-T12
+   → "2-T16"
+   → "2-T12"
+
+4. Convert to format:
    quantity-Tdiameter
 
 Examples:
+2-T16+1-T12 → "2-T16" , "1-T12"
 2 - T16 → "2-T16"
 3-T20 → "3-T20"
 
-4. Remove duplicates.
-5. Return only unique values.
+5. Remove duplicates.
+6. Return only unique values.
 
 STIRRUPS:
 

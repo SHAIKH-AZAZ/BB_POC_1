@@ -106,8 +106,15 @@ Examples:
 
 Rules:
 - Keep format like 2-T16
+- If "+" appears, treat it as separate reinforcement entries.
+
+  Example:
+  2-T16 + 2-T12
+  → "2-T16"
+  → "2-T12"
+
 - Remove:
-  (0.1L), [LAP], +
+  (0.1L), [LAP]
 
 =========================
 STIRRUPS
