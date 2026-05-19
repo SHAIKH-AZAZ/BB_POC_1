@@ -1,0 +1,1456 @@
+{
+  "beams": [
+    {
+      "beam_id": "B1",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2a",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2b",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2c",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2d",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9e",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9f",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9g",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9h",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2e",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "@150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2f",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "@150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2g",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "@100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B2h",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16",
+        "3-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "@100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B3a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "3-T16",
+        "2-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "@100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B3b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T15",
+        "3-T16",
+        "2-T20",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "@125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B3c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T15",
+        "3-T16",
+        "2-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "@175 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B3d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "@125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B3f",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L@125 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4a",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@125 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4b",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@100 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4c",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@100 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4d",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@125 C/C",
+          "T8@150 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4e",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@150 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4f",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@150 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B4g",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8@100 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B13a",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@125 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B14a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T16",
+        "1-T20",
+        "2-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@100 C/C",
+          "T10@125 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B14b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@125 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B15a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@100 C/C",
+          "T10@125 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B15b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@125 C/C",
+          "T10@150 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B15c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@100 C/C",
+          "T10@150 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B15d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10@100 C/C"
+        ],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B5d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "2-T20",
+        "3-T20",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C",
+          "125 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5e",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "2-T20",
+        "3-T20",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L",
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C",
+          "125 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T12",
+        "2-T16",
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "3-T16",
+        "2-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C",
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "2-T20",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15e",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15f",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15g",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15h",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L"
+        ],
+        "spacing": [
+          "125 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15i",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15j",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L"
+        ],
+        "spacing": [
+          "125 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B15k",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B16a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "2-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "125 C/C",
+          "150 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B16b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T16",
+        "2-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B7",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T15",
+        "2-T16",
+        "1-T20",
+        "2-T20",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "3L-T20"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "1-T20",
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "3L-T20"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "1-T20",
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8d",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T20",
+        "3-T20",
+        "1-T25",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8e",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B8f",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "3L-T20"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B16i",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T15",
+        "2-T16",
+        "2-T20",
+        "3-T20",
+        "1-T25",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "3-T20"
+        ],
+        "spacing": [
+          "120 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B16j",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T15",
+        "1-T20",
+        "2-T20",
+        "3-T20",
+        "2-T25",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "3-T20"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B17a",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B17b",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "B5g",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5h",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T20",
+        "3-T20",
+        "1-T25",
+        "3-T125"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5i",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5j",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "1-T20",
+        "2-T20",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B5k",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "2-T20",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "2-T20",
+        "3-T20"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B9c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16",
+        "2-T20",
+        "3-T20",
+        "1-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B17c",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B17d",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B17e",
+      "size": {
+        "width": 230,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "125 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B18a",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T20",
+        "2-T25",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10-3L"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B18b",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T20",
+        "2-T25",
+        "3-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T10"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B18c",
+      "size": {
+        "width": 300,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "1-T20",
+        "2-T25"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "100 C/C"
+        ]
+      }
+    }
+  ]
+}

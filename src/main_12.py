@@ -4,12 +4,19 @@ from tqdm import tqdm
 
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
-from vision_extractor import extract_from_image
+from image_slicer import smart_slice, delete_temp_slices
+from vision_extractor import extract_from_image, extract_with_reflection
 
 
 def load_prompt():
     with open(os.path.join(os.path.dirname(__file__), "prompt_12.txt"), "r", encoding="utf-8") as f:
         return f.read()
+
+
+def load_verify_prompt():
+    with open(os.path.join(os.path.dirname(__file__), "verify_prompt.txt"), "r") as f:
+        return f.read()
+
 
 
 def safe_parse_json(result):
@@ -43,16 +50,26 @@ def process_pdf(pdf_path):
     image_paths = convert_pdf_to_images(pdf_path, file_output_folder)
 
     prompt = load_prompt()
+    verify_prompt = load_verify_prompt()
 
     all_beams = []
 
     for img_path in tqdm(image_paths):
+        slice_paths = smart_slice(img_path, suggest_fn=extract_from_image)
+        for slice_img in slice_paths:
 
-        result = extract_from_image(img_path, prompt)
-        parsed = safe_parse_json(result)
+            result = extract_with_reflection(
+                slice_img,
+                extract_prompt=prompt,
+                verify_prompt_template=verify_prompt,
+                max_rounds=1,
+            )
+            parsed = safe_parse_json(result)
 
-        if parsed and "beams" in parsed:
-            all_beams.extend(parsed["beams"])
+            if parsed and "beams" in parsed:
+                all_beams.extend(parsed["beams"])
+
+        delete_temp_slices(slice_paths)
 
     cleaned_beams = []
     for beam in all_beams:

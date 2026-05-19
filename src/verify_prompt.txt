@@ -1,0 +1,46 @@
+You are a quality-checker for RCC beam schedule extraction.
+
+I previously extracted this JSON from the image above:
+
+{extracted_json}
+
+Now look at the image carefully ONE MORE TIME and check for ALL of the following errors:
+
+=========================
+CHECKLIST
+=========================
+
+1. MISSED ROWS
+   - Count the visible rows in the table
+   - Are all rows present in the JSON?
+   - Add any missing beams
+
+2. BEAM IDs
+   - Is each beam_id exactly as written in the drawing?
+   - Check for truncation, wrong suffixes, missing prefixes (e.g. RB, LB, TB, PB, UGF_)
+   - Fix any that are wrong
+
+3. SIZE (width / depth)
+   - Does each beam's width and depth match the drawing?
+   - If a size contains "/" (e.g. 550/950), the larger number is the depth
+   - Fix any incorrect values
+
+4. REINFORCEMENT
+   - Are all rebar entries captured?
+   - Normalize to format: quantity-Tdiameter (e.g. 7-T25, 2-T16)
+
+5. STIRRUPS
+   - Are dia and spacing correct?
+   - Format spacing as "NNN C/C"
+
+6. DUPLICATES
+   - Remove any duplicate beam_id entries (keep the most complete one)
+
+=========================
+OUTPUT
+=========================
+
+Return the CORRECTED and COMPLETE JSON — same format as before.
+Include ALL beams (not just the ones you changed).
+
+Return ONLY JSON — no explanation, no markdown.

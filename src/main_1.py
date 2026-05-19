@@ -4,12 +4,8 @@ from tqdm import tqdm
 
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
-from vision_extractor import extract_from_image
-from image_slicer import (
-    slice_image_horizontally,
-    delete_temp_slices,
-    get_dynamic_slice_count,
-)
+from vision_extractor import extract_from_image, extract_with_reflection
+from image_slicer import smart_slice, delete_temp_slices
 
 
 # ==============================
@@ -19,6 +15,12 @@ from image_slicer import (
 def load_prompt():
     with open(os.path.join(os.path.dirname(__file__), "prompt_1.txt"), "r") as f:
         return f.read()
+
+
+def load_verify_prompt():
+    with open(os.path.join(os.path.dirname(__file__), "verify_prompt.txt"), "r") as f:
+        return f.read()
+
 
 
 # ==============================
@@ -77,21 +79,20 @@ def process_pdf(pdf_path):
     image_paths = convert_pdf_to_images(pdf_path, file_output_folder)
 
     prompt = load_prompt()
+    verify_prompt = load_verify_prompt()
     all_beams = []
 
     for img_path in tqdm(image_paths):
 
-        # Ask the model how many horizontal slices this page needs.
-        num_slices = get_dynamic_slice_count(
-            img_path,
-            suggest_fn=extract_from_image,
-            fallback_slices=6,
-        )
-        print(f"Using {num_slices} slice(s) for {os.path.basename(img_path)}")
-        slice_paths = slice_image_horizontally(img_path, num_slices=num_slices)
+        slice_paths = smart_slice(img_path, suggest_fn=extract_from_image)
 
         for slice_img in slice_paths:
-            result = extract_from_image(slice_img, prompt)
+            result = extract_with_reflection(
+                slice_img,
+                extract_prompt=prompt,
+                verify_prompt_template=verify_prompt,
+                max_rounds=1,
+            )
 
             try:
                 parsed = json.loads(result)
@@ -165,7 +166,7 @@ def main():
     os.makedirs(OUTPUT_DIR, exist_ok=True)
 
     pdf_files = [
-        f for f in os.listdir(INPUT_DIR)
+                f for f in os.listdir(INPUT_DIR)
         if f.lower().endswith(".pdf")
     ]
 
