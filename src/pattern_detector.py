@@ -28,8 +28,8 @@ Ignore numbers.
 Ignore row content.
 Focus ONLY on column names.
 
-There are EXACTLY 13 patterns.
-Return ONLY one number from 1 to 13.
+There are EXACTLY 14 patterns.
+Return ONLY one number from 1 to 14.
 No explanation.
 No extra text.
 Only the number.
@@ -180,6 +180,46 @@ AND NONE of the following exist:
 - E
 
 If any of these exist → it is NOT Pattern 5
+
+========================================================
+PATTERN 14
+========================================================
+Header contains:
+- BEAM NO
+- BEAM SIZE: BREADTH (B) and DEPTH (D)
+
+SPAN section with two sub-sections:
+
+BOTTOM REINFORCEMENT:
+    - LEFT SUPPORT (Layer 1)
+    - MID SPAN (Layer 1)
+    - MID SPAN (Layer 2)
+    - RIGHT SUPPORT (Layer 1)
+
+TOP REINFORCEMENT:
+    - LEFT SUPPORT (Layer 1)
+    - LEFT SUPPORT (Layer 2)
+    - MID SPAN (Layer 1)
+    - RIGHT SUPPORT (Layer 1)
+    - RIGHT SUPPORT (Layer 2)
+
+STIRRUPS:
+- NO OF LEGS
+- DIA
+- LEFT SUPPORT SPACING
+- MID SPACING
+- RIGHT SUPPORT SPACING
+
+- SIDE FACE REINFORCEMENT ON EACH FACE (rightmost column)
+
+CRITICAL IDENTIFIERS for Pattern 14:
+- Stirrups section has SEPARATE columns: NO OF LEGS, DIA, LEFT SUPPORT SPACING, MID SPACING, RIGHT SUPPORT SPACING
+- The DIA column contains a plain number (e.g. 8), not a bar+legs string
+- Table title often contains an elevation like "(+)4.900M" or similar
+- NO GRID ID column present
+- Beam IDs can be any format (RB1, GB1, FB1, B1, etc.) — do not use beam ID format to decide
+
+If above structure matches and NO GRID ID exists → RETURN 14
 
 ========================================================
 PATTERN 6
@@ -426,6 +466,17 @@ If LINTEL LENGTH is NOT present → RETURN 13
 FINAL DECISION PRIORITY (VERY IMPORTANT)
 ========================================================
 
+0) If header contains ALL of:
+   - BEAM NO + BREADTH (B) + DEPTH (D)
+   - BOTTOM REINFORCEMENT with LEFT SUPPORT / MID SPAN / RIGHT SUPPORT (with Layer 1 / Layer 2)
+   - TOP REINFORCEMENT with LEFT SUPPORT / MID SPAN / RIGHT SUPPORT (with Layer 1 / Layer 2)
+   - STIRRUPS with separate NO OF LEGS, DIA, LEFT SUPPORT SPACING, MID SPACING, RIGHT SUPPORT SPACING
+   - SIDE FACE REINFORCEMENT ON EACH FACE
+   AND NO GRID ID column
+   → RETURN 14
+
+   (Check this BEFORE Pattern 1 and Pattern 6 to avoid misclassification)
+
 1) If header contains:
    "BEAM TOP LEVEL"
    AND any reinforcement/stirrup/side-face/rings/shear columns
@@ -506,7 +557,7 @@ Return ONLY the number.
 
     pattern_number = int(result)
 
-    if pattern_number < 1 or pattern_number > 13:
+    if pattern_number < 1 or pattern_number > 14:
         raise Exception(
             f"Pattern detection out of range. Model returned: {pattern_number}"
         )

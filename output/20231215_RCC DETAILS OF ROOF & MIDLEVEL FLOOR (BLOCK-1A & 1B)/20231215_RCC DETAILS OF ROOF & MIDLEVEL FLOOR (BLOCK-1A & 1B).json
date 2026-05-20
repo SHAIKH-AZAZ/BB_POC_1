@@ -1,0 +1,243 @@
+{
+  "beams": [
+    {
+      "beam_id": "AB3,4,8,9,40,41,44,45",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T10",
+        "2-T12",
+        "3-T12",
+        "2-T16",
+        "3-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "AB52,59,99,100",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T10",
+        "2-T12",
+        "3-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "AB53,54,55,56,57,58,",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T10",
+        "2-T12",
+        "3-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "AB71,72,73",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T10",
+        "2-T12",
+        "3-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "3 - 112",
+      "size": {
+        "width": null,
+        "depth": null,
+        "length": null
+      },
+      "reinforcement": [],
+      "stirrups": {
+        "dia": [],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "2 - T12",
+      "size": {
+        "width": null,
+        "depth": null,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T12"
+      ],
+      "stirrups": {
+        "dia": [],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "2 - T16",
+      "size": {
+        "width": null,
+        "depth": null,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [],
+        "spacing": []
+      }
+    },
+    {
+      "beam_id": "BB2,39,43",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "2-T10",
+        "2-T12",
+        "3-T12",
+        "2-T16"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "BB3,4,8,9,40,41,44,45",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T12"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "BC1",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T12"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "RB1, RB2",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T12"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    },
+    {
+      "beam_id": "B1, B2",
+      "size": {
+        "width": 200,
+        "depth": 600,
+        "length": null
+      },
+      "reinforcement": [
+        "3-T12"
+      ],
+      "stirrups": {
+        "dia": [
+          "T8"
+        ],
+        "spacing": [
+          "150 C/C",
+          "200 C/C"
+        ]
+      }
+    }
+  ]
+}

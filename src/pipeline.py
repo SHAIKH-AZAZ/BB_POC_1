@@ -4,8 +4,8 @@ pipeline.py
 Shared extraction pipeline used by all main_N.py pattern handlers.
 
 Flow:
-    PDF → images → smart_slice (model picks direction+count)
-        → extract_with_reflection per slice
+    PDF → images → smart_slice (model picks region + direction + count)
+        → extract_with_tools per slice  (think + add_beam tool calls)
         → collect raw beams
         → caller does pattern-specific post-processing
         → save_beams()
@@ -17,7 +17,7 @@ from tqdm import tqdm
 
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
-from vision_extractor import extract_from_image, extract_with_reflection
+from vision_extractor import extract_from_image, extract_with_tools, extract_with_reflection
 from image_slicer import smart_slice, delete_temp_slices
 from utils import safe_parse_json
 
@@ -27,7 +27,7 @@ from utils import safe_parse_json
 # ─────────────────────────────────────────────────────────────────────────────
 
 def _load_file(filename):
-    """Load a text file from the same directory as the caller's src/ folder."""
+    """Load a text file from the same directory as this module (src/)."""
     src_dir = os.path.dirname(os.path.abspath(__file__))
     with open(os.path.join(src_dir, filename), "r", encoding="utf-8") as f:
         return f.read()
@@ -37,9 +37,14 @@ def _load_file(filename):
 # CORE PIPELINE
 # ─────────────────────────────────────────────────────────────────────────────
 
-def run_pipeline(pdf_path, prompt_file, max_rounds=1, output_dir=OUTPUT_DIR):
+def run_pipeline(pdf_path, prompt_file, output_dir=OUTPUT_DIR):
     """
     Run the standard extraction pipeline for one PDF.
+
+    Each image slice is processed with extract_with_tools():
+      1. Model calls think() to reason about table structure.
+      2. Model calls add_beam() once per data row.
+      3. Pipeline collects all add_beam results.
 
     Returns:
         all_beams          : list of raw beam dicts (not yet deduplicated)
@@ -53,21 +58,18 @@ def run_pipeline(pdf_path, prompt_file, max_rounds=1, output_dir=OUTPUT_DIR):
     print(f"\n📄 Converting {file_name}.pdf to images...")
     image_paths = convert_pdf_to_images(pdf_path, file_output_folder)
 
-    prompt        = _load_file(prompt_file)
-    verify_prompt = _load_file("verify_prompt.txt")
+    prompt    = _load_file(prompt_file)
     all_beams = []
 
     for img_path in tqdm(image_paths):
-        # Model decides direction (horizontal / vertical) and slice count
+        # Model decides region, direction (horizontal/vertical), and slice count
         slice_paths = smart_slice(img_path, suggest_fn=extract_from_image)
 
         for slice_img in slice_paths:
-            result = extract_with_reflection(
-                slice_img,
-                extract_prompt=prompt,
-                verify_prompt_template=verify_prompt,
-                max_rounds=max_rounds,
-            )
+            # Tool-based extraction: model uses think() then add_beam() per row.
+            # Falls back to plain extraction if no tool calls are made.
+            result = extract_with_tools(slice_img, prompt)
+
             parsed = safe_parse_json(result)
             if parsed and "beams" in parsed:
                 all_beams.extend(parsed["beams"])
