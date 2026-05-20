@@ -30,6 +30,7 @@ Create `.env` in the repo root:
 OPENAI_API_KEY=your_api_key_here
 OPENAI_MODEL=gpt-4.1-mini
 OPENAI_IMAGE_DETAIL=high
+OPENAI_BATCH_WORKERS=4
 ```
 
 Install dependencies:
@@ -57,6 +58,20 @@ Run with a specific prompt:
 ```powershell
 .\.venv\Scripts\python.exe src\main_openai.py --pdf "input\your-file.pdf" --prompt-file prompt_3.txt
 ```
+
+Run faster with batched slice extraction:
+
+```powershell
+.\.venv\Scripts\python.exe src\main_openai.py --pdf "input\your-file.pdf" --pattern 3 --workers 4
+```
+
+Run multiple PDFs from `input/` concurrently:
+
+```powershell
+.\.venv\Scripts\python.exe src\main_openai.py --workers 4 --pdf-workers 2
+```
+
+`--workers` controls concurrent OpenAI calls for cropped table slices inside one PDF. `--pdf-workers` controls how many PDFs run at the same time. Keep both values modest because total concurrent OpenAI requests can become `workers * pdf-workers`.
 
 Outputs are written to `output/<pdf-name>/<pdf-name>.json` with a deterministic QA report at `output/<pdf-name>/<pdf-name>.qa.json`.
 

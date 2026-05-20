@@ -13,9 +13,12 @@ Flow:
 
 import os
 import json
+import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
 from tqdm import tqdm
 
-from config import INPUT_DIR, OUTPUT_DIR
+from config import INPUT_DIR, OPENAI_BATCH_WORKERS, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
 from beam_validator import build_qa_report, validate_beam_payload
 from vision_extractor import (
@@ -87,7 +90,67 @@ def run_pipeline(pdf_path, prompt_file, output_dir=OUTPUT_DIR):
     return all_beams, file_output_folder, file_name
 
 
-def run_structured_pipeline(pdf_path, prompt_file, output_dir=OUTPUT_DIR):
+def _extract_structured_slice(slice_img, prompt, max_retries=2):
+    last_error = None
+
+    for attempt in range(max_retries + 1):
+        try:
+            result = extract_structured_from_image(slice_img, prompt)
+            parsed = safe_parse_json(result)
+            if parsed and "beams" in parsed:
+                return validate_beam_payload(parsed)["beams"]
+            if result:
+                print(f"  ⚠ Could not parse strict JSON from slice: {os.path.basename(slice_img)}")
+            return []
+        except Exception as exc:
+            last_error = exc
+            if attempt < max_retries:
+                time.sleep(2 ** attempt)
+
+    raise last_error
+
+
+def _extract_structured_slices(slice_paths, prompt, max_workers):
+    if not slice_paths:
+        return []
+
+    worker_count = max(1, min(int(max_workers), len(slice_paths)))
+
+    if worker_count == 1:
+        all_beams = []
+        for slice_img in slice_paths:
+            all_beams.extend(_extract_structured_slice(slice_img, prompt))
+        return all_beams
+
+    print(f"  Processing {len(slice_paths)} slice(s) with {worker_count} worker(s)...")
+
+    results_by_index = {}
+    with ThreadPoolExecutor(max_workers=worker_count) as executor:
+        futures = {
+            executor.submit(_extract_structured_slice, slice_img, prompt): (index, slice_img)
+            for index, slice_img in enumerate(slice_paths)
+        }
+
+        for future in as_completed(futures):
+            index, slice_img = futures[future]
+            try:
+                results_by_index[index] = future.result()
+            except Exception as exc:
+                results_by_index[index] = []
+                print(f"  ⚠ Extraction failed for {os.path.basename(slice_img)}: {exc}")
+
+    all_beams = []
+    for index in range(len(slice_paths)):
+        all_beams.extend(results_by_index.get(index, []))
+    return all_beams
+
+
+def run_structured_pipeline(
+    pdf_path,
+    prompt_file,
+    output_dir=OUTPUT_DIR,
+    max_workers=OPENAI_BATCH_WORKERS,
+):
     """
     Run the production OpenAI workflow:
       PDF -> page PNGs -> schedule crop/slices -> strict JSON schema extraction
@@ -112,14 +175,13 @@ def run_structured_pipeline(pdf_path, prompt_file, output_dir=OUTPUT_DIR):
     for img_path in tqdm(image_paths):
         slice_paths = smart_slice(img_path, suggest_fn=extract_from_image)
 
-        for slice_img in slice_paths:
-            result = extract_structured_from_image(slice_img, prompt)
-            parsed = safe_parse_json(result)
-            if parsed and "beams" in parsed:
-                validated = validate_beam_payload(parsed)
-                all_beams.extend(validated["beams"])
-            elif result:
-                print(f"  ⚠ Could not parse strict JSON from slice: {os.path.basename(slice_img)}")
+        all_beams.extend(
+            _extract_structured_slices(
+                slice_paths,
+                prompt,
+                max_workers=max_workers,
+            )
+        )
 
         delete_temp_slices(slice_paths)
 
