@@ -17,7 +17,13 @@ from tqdm import tqdm
 
 from config import INPUT_DIR, OUTPUT_DIR
 from pdf_to_images import convert_pdf_to_images
-from vision_extractor import extract_from_image, extract_with_tools, extract_with_reflection
+from beam_validator import build_qa_report, validate_beam_payload
+from vision_extractor import (
+    extract_from_image,
+    extract_structured_from_image,
+    extract_with_reflection,
+    extract_with_tools,
+)
 from image_slicer import smart_slice, delete_temp_slices
 from utils import safe_parse_json
 
@@ -79,6 +85,49 @@ def run_pipeline(pdf_path, prompt_file, output_dir=OUTPUT_DIR):
         delete_temp_slices(slice_paths)
 
     return all_beams, file_output_folder, file_name
+
+
+def run_structured_pipeline(pdf_path, prompt_file, output_dir=OUTPUT_DIR):
+    """
+    Run the production OpenAI workflow:
+      PDF -> page PNGs -> schedule crop/slices -> strict JSON schema extraction
+      -> Pydantic validation/normalization -> QA report.
+
+    Returns:
+        beams              : validated beam dicts
+        file_output_folder : path where images + JSON will be stored
+        file_name          : base filename without extension
+        qa_report          : deterministic sanity-check report
+    """
+    file_name = os.path.splitext(os.path.basename(pdf_path))[0]
+    file_output_folder = os.path.join(output_dir, file_name)
+    os.makedirs(file_output_folder, exist_ok=True)
+
+    print(f"\n📄 Converting {file_name}.pdf to images...")
+    image_paths = convert_pdf_to_images(pdf_path, file_output_folder)
+
+    prompt = _load_file(prompt_file)
+    all_beams = []
+
+    for img_path in tqdm(image_paths):
+        slice_paths = smart_slice(img_path, suggest_fn=extract_from_image)
+
+        for slice_img in slice_paths:
+            result = extract_structured_from_image(slice_img, prompt)
+            parsed = safe_parse_json(result)
+            if parsed and "beams" in parsed:
+                validated = validate_beam_payload(parsed)
+                all_beams.extend(validated["beams"])
+            elif result:
+                print(f"  ⚠ Could not parse strict JSON from slice: {os.path.basename(slice_img)}")
+
+        delete_temp_slices(slice_paths)
+
+    validated_payload = validate_beam_payload({"beams": all_beams})
+    beams = validated_payload["beams"]
+    qa_report = build_qa_report(beams)
+
+    return beams, file_output_folder, file_name, qa_report
 
 
 # ─────────────────────────────────────────────────────────────────────────────

@@ -46,7 +46,7 @@ MULTIPLE TABLES PER PAGE
 =========================
 
 A single page may contain MULTIPLE separate beam schedule tables
-(e.g. BLOCK 1A ROOF, BLOCK 1A MIDLEVEL, BLOCK 1B ROOF, BLOCK 1B MIDLEVEL).
+(e.g. BLOCK 1A ROOF, BLOCK 1A MIDLEVEL, BLOCK 1B ROOF, BLOCK 1B MIDLEVEL) or any other type may be given but table format is must to convsider .
 
 Extract ALL beams from ALL tables on the page.
 Do NOT skip any table section.
@@ -77,7 +77,7 @@ VALID beam_id examples from this drawing type:
   AB52,59,99,100     AB12,34                     AB20,27
   AB53,54,55,56,57,58,   AB71,72,73
   BB2,39,43          BB3,4,8,9,40,41,44,45
-  BC1                RB1, RB2                    B1, B2
+  RB1, RB2                    B1, B2
 
 =========================
 WHAT TO IGNORE

@@ -3,7 +3,8 @@ import json
 import base64
 from PIL import Image
 from openai import OpenAI
-from config import OPENAI_API_KEY
+from beam_schema import BASE_BEAM_EXTRACTION_PROMPT, BEAM_EXTRACTION_SCHEMA
+from config import OPENAI_API_KEY, OPENAI_IMAGE_DETAIL, OPENAI_MODEL
 
 client = OpenAI(api_key=OPENAI_API_KEY)
 
@@ -17,10 +18,13 @@ def encode_image(image_path):
         return base64.b64encode(img.read()).decode("utf-8")
 
 
-def _image_content(base64_image):
+def _image_content(base64_image, detail=OPENAI_IMAGE_DETAIL):
     return {
         "type": "image_url",
-        "image_url": {"url": f"data:image/png;base64,{base64_image}"},
+        "image_url": {
+            "url": f"data:image/png;base64,{base64_image}",
+            "detail": detail,
+        },
     }
 
 
@@ -259,7 +263,7 @@ def extract_with_tools(image_path, prompt_text, max_iterations=80):
         iteration += 1
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model=OPENAI_MODEL,
             messages=messages,
             tools=BEAM_TOOLS,
             tool_choice="auto",
@@ -371,7 +375,7 @@ def extract_from_image(image_path, prompt_text):
     base64_image = encode_image(image_path)
 
     response = client.chat.completions.create(
-        model="gpt-4.1-mini",
+        model=OPENAI_MODEL,
         messages=[
             {
                 "role": "user",
@@ -383,6 +387,46 @@ def extract_from_image(image_path, prompt_text):
         ],
         temperature=0,
     )
+    return response.choices[0].message.content
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# STRICT JSON-SCHEMA EXTRACTION
+# ─────────────────────────────────────────────────────────────────────────────
+
+def extract_structured_from_image(image_path, prompt_text=None, schema=None):
+    """
+    Single-pass extraction with OpenAI strict JSON schema output.
+
+    This is the production path when callers want the model response itself to
+    be schema-valid before deterministic post-processing runs.
+    """
+    base64_image = encode_image(image_path)
+    prompt = prompt_text or BASE_BEAM_EXTRACTION_PROMPT
+    json_schema = schema or BEAM_EXTRACTION_SCHEMA
+
+    response = client.chat.completions.create(
+        model=OPENAI_MODEL,
+        messages=[
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": prompt},
+                    _image_content(base64_image),
+                ],
+            }
+        ],
+        response_format={
+            "type": "json_schema",
+            "json_schema": {
+                "name": "beam_schedule_extraction",
+                "strict": True,
+                "schema": json_schema,
+            },
+        },
+        temperature=0,
+    )
+
     return response.choices[0].message.content
 
 
@@ -434,7 +478,7 @@ def extract_with_reflection(image_path, extract_prompt, verify_prompt_template, 
         })
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model=OPENAI_MODEL,
             messages=messages,
             temperature=0,
         )
