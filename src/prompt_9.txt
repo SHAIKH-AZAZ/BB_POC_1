@@ -137,6 +137,8 @@ Rules:
    2-T16 + 2-T12
    -> "2-T16"
    -> "2-T12"
+   or
+   + 2-T25 -> "2-T25"
 
 2. Normalize obvious variants into quantity-diameter form:
 
